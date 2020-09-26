@@ -1,0 +1,8 @@
+drwxrwxr-x  2 erik erik   4096 sep 24 19:38 encrypted
+drwxrwxr-x  3 erik erik   4096 sep 27 12:14 git
+drwxrwxr-x  4 erik erik   4096 sep 24 22:48 keys
+lrwxrwxrwx  1 erik erik      5 sep 24 22:33 mnt -> /mnt/
+drwxrwxr-x 10 erik erik   4096 sep 27 13:55 private
+lrwxrwxrwx  1 erik erik      5 sep 24 22:55 srv -> /srv/
+drwxrwxr-x  4 erik erik   4096 jul 19 17:12 VirtualBox VMs
+lrwxrwxrwx  1 erik erik      8 sep 24 22:02 www -> /var/www

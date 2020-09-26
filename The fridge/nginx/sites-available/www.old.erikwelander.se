@@ -1,0 +1,13 @@
+server {
+       listen 80;
+       listen [::]:80;
+
+       server_name www.old.erikwelander.se;
+       root /var/www/erikwelander.se/old_sites/old.erikwelander.se;
+       index index.php;
+
+       include /etc/nginx/default_site_params;
+
+       access_log off;
+       error_log off;
+   }

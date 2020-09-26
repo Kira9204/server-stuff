@@ -1,0 +1,2 @@
+sudo apt-get install libpam-systemd
+sudo loginctl enable-linger $USER

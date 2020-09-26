@@ -1,0 +1,6 @@
+1. Copy startwm.sh to
+/etc/xrdp/startwm.sh
+
+2. Copy . files to home directory
+
+3. sudo apt-get install lxde-common

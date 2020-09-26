@@ -1,0 +1,16 @@
+Add this to your .bashrc:
+export DISPLAY=:0
+
+Set up a VNC password:
+read -e -p "VNC Password: " -i "ubuntu" password
+
+Write gnome registry settings
+dconf write /org/gnome/desktop/remote-access/enabled true
+dconf write /org/gnome/desktop/remote-access/prompt-enabled false
+dconf write /org/gnome/desktop/remote-access/authentication-methods "['vnc']"
+dconf write /org/gnome/desktop/remote-access/require-encryption false
+dconf write /org/gnome/desktop/remote-access/vnc-password \"\'$(echo -n $password | base64)\'\"
+dconf dump /org/gnome/desktop/remote-access/
+
+Restart lightdm
+sudo systemctl lightdm restart

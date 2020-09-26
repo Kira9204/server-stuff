@@ -1,0 +1,13 @@
+[Unit]
+Description=Typebat bot
+
+[Service]
+Environment=PORT=3002
+WorkingDirectory=/srv/bots/snekabel/typeBat
+ExecStart=/usr/bin/node dist/index.js >/dev/null 2>&1
+Restart=always
+RestartSec=10000ms
+StartLimitInterval=0
+
+[Install]
+WantedBy=default.target

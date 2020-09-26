@@ -1,0 +1,39 @@
+Enable VNC:
+https://www.server-world.info/en/note?os=Ubuntu_20.04&p=desktop&f=5
+sudo systemctl stop lightdm.service
+sudo systemctl disable lightdm.service
+
+sudo apt install tigervnc-standalone-server 
+vncpasswd
+
+.vnc/xstartup
+#!/bin/bash
+#xrdb $HOME/.Xresources
+exec startxfce4
+
+VNC Scripts
+-startvnc.sh
+#/bin/bash
+vncserver :1 -geometry 1920x1080 -depth 24 -localhost no
+
+-stopvnc.sh
+#/bin/bash
+vncserver -kill :1
+
+Systemd
+[Unit]
+Description=Remote desktop service (VNC)
+After=syslog.target network.target
+
+[Service]
+Type=forking
+User=erik
+PAMName=login
+PIDFile=/home/erik/.vnc/%H:%i.pid
+ExecStartPre=-/usr/bin/vncserver -kill :1 > /dev/null 2>&1
+ExecStart=/usr/bin/vncserver -geometry 1920x1080 -depth 24 -localhost no :1
+ExecStop=/usr/bin/vncserver -kill :1
+
+[Install]
+WantedBy=multi-user.target
+sudo systemctl daemon-reload

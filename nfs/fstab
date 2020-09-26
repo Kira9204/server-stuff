@@ -1,0 +1,7 @@
+
+#
+# Virtualbox NFS4 mount to host system.
+# This is made to be _FAST_ and handle many IO opoerations.
+# It works very well for qbittorrent for example.
+#
+192.168.56.1:/home/erik /home/erik/servermount nfs4 auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0

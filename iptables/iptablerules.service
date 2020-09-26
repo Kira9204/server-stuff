@@ -1,0 +1,14 @@
+[Unit]
+Description=Iptables rules
+After=network.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/home/erik/networkConfig/iptables.rules.sh
+ExecStop=/home/erik/networkConfig/iptables.clean.sh
+ExecReload=/home/erik/networkConfig/iptables.reload.sh
+User=root
+
+[Install]
+WantedBy=multi-user.target

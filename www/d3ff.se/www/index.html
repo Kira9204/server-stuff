@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+/////////////////////////////////////////////////////////////////////////////
+// Author:      Erik Welander (erik.welander@hotmail.com)
+// Modified:    2020-09-26
+// Link directory for d3ff.se pages
+/////////////////////////////////////////////////////////////////////////////
+-->
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <link rel="icon" type="image/png" sizes="64x64" href="./favicon.png">
+        <title>d3ff.se start</title>
+        <style>
+            /* Occupy 100% of the page */
+            html, body
+            {
+                height: 100%;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                background: #0b0b0b;
+                color: #858585;
+                font: normal normal normal 100%/1.4 georgia, serif;
+            }
+    
+            a {
+                color: #858585;
+            }
+    
+            #bg-cover-page {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-image: url("./lain.jpg");
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            #text-main {
+                position: absolute;
+                top: 29%;
+                left: 10%;
+            }
+    
+            #text-bot {
+                position: absolute;
+                top: 75%;
+                left: 10%;
+            }
+            
+            .list-style-none {
+                list-style: none;
+                padding: 0;
+                margin-top: 0
+            }
+        </style>
+    </head>
+    <body>
+        <div id="bg-cover-page">
+            <div id="text-main">
+                <h1>Hi!</h1>
+                Welcome to <a href="./">D3FF.se</a><br/>
+                This domain hosts a number of personal pet projects,<br>
+                mostly private ones.<br>
+                You will find a list of public resources below:
+            </div>
+            <div id="text-bot">
+                Active sites:
+                <ul class="list-style-none">
+                    <li><a href="https://files.d3ff.se" target="_blank">files</a></li>
+                    <li><a href="https://myip.d3ff.se" target="_blank">myip</a></li>
+                </ul>
+                Owner: <a href="https://erikwelander.se" target="_blank">erikwelander.se</a>
+            </div>
+        </div>
+    </body>
+</html>

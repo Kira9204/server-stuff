@@ -1,0 +1,7 @@
+[core]
+	editor = code --wait
+[user]
+	name = Erik Welander
+	email = erik.welander@mindville.com
+[color]
+	ui = true

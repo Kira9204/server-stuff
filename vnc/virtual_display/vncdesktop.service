@@ -1,0 +1,15 @@
+[Unit]
+Description=Remote desktop service (VNC)
+After=syslog.target network.target
+
+[Service]
+Type=forking
+User=erik
+PAMName=login
+PIDFile=/home/erik/.vnc/%H:%i.pid
+ExecStartPre=-/usr/bin/vncserver -kill :1 > /dev/null 2>&1
+ExecStart=/usr/bin/vncserver -geometry 1920x1080 -depth 24 -localhost no :1
+ExecStop=/usr/bin/vncserver -kill :1
+
+[Install]
+WantedBy=multi-user.target
