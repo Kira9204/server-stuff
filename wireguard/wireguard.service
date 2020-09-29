@@ -1,0 +1,31 @@
+[Unit]
+Description=Wireguard tunnels
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+User=root
+Type=oneshot
+RemainAfterExit=true
+##Start
+#Add and configure interface
+ExecStart=/sbin/ip link add dev skwg type wireguard
+ExecStart=/usr/bin/wg setconf skwg /etc/wireguard.conf
+ExecStart=/sbin/ip link set skwg up
+ExecStart=/sbin/ip a add 169.254.0.4/26 dev skwg scope link
+
+#Dos
+ExecStart=/sbin/ip r add 10.0.1.0/24 via 169.254.0.5
+
+#Libre
+ExecStart=/sbin/ip r add 10.0.2.0/24 via 169.254.0.2
+
+#Neo
+ExecStart=/sbin/ip r add 10.0.3.0/24 via 169.254.0.1
+
+#TB Lugia
+ExecStart=/sbin/ip r add 10.0.4.0/24 via 169.254.0.3
+
+ExecStop=/sbin/ip link del dev skwg
+[Install]
+WantedBy=multi-user.target
