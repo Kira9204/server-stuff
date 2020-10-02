@@ -16,16 +16,16 @@ UUID=d74ff039-d45c-45c9-be7a-e89b20e4048a /mnt/local/2tb ext4 defaults 0 0
 
 #### NFS Shares ####
 # Snekabel
-10.0.4.2:/mnt /remote/snekabel nfs4 auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0
+10.0.4.2:/mnt /mnt/remote/snekabel nfs4 auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0
 #10.0.4.2:/mnt /home/erik/storage/remote/snekabel nfs nfsvers=4,hard,proto=tcp 0 0
 # Neo
 #10.0.3.6:/mnt /home/erik/storage/remote/neo nfs nfsvers=4,hard,proto=tcp 0 0
 
 #### SAMBA Shares ####
 #Ampharos RAID
-//10.0.3.2/RAID /mnt/remote/neo/ampharos/RAID cifs credentials=/home/erik/smb-credentials/ampharoscredentials,vers=3.0,uid=root,gid=sudo,dir_mode=0555,file_mode=0555 0 0
+//10.0.3.2/RAID /mnt/remote/neo/ampharos/RAID cifs credentials=/home/erik/keys/smb/ampharoscredentials,vers=3.0,uid=root,gid=sudo,dir_mode=0555,file_mode=0555 0 0
 #Ampharos Old RSS
-//10.0.3.2/RSS_OLD /mnt/remote/neo/ampharos/RSS_OLD cifs credentials=/home/erik/smb-credentials/ampharoscredentials,vers=3.0,uid=root,gid=sudo,dir_mode=0555,file_mode=0555 0 0
+//10.0.3.2/RSS_OLD /mnt/remote/neo/ampharos/RSS_OLD cifs credentials=/home/erik/keys/smb/ampharoscredentials,vers=3.0,uid=root,gid=sudo,dir_mode=0555,file_mode=0555 0 0
 
 #### SSHFS Shares ####
 sshfs#guests@home.elis.nu:/files /mnt/remote/elis fuse ro,delay_connect,allow_other,IdentityFile=/home/erik/keys/ssh/elis/.ssh/id_rsa,reconnect,ServerAliveInterval=10 0 0
