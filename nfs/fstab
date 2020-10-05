@@ -5,3 +5,4 @@
 # It works very well for qbittorrent for example.
 #
 192.168.56.1:/home/erik /home/erik/servermount nfs4 auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0
+192.168.56.1:/mnt/local /home/erik/mnt nfs4 auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0

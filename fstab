@@ -14,6 +14,11 @@ UUID=b791b6f3-6432-49a9-9af3-9593b440fe54 /mnt/local/4tb ext4 defaults 0 0
 # 2TB
 UUID=d74ff039-d45c-45c9-be7a-e89b20e4048a /mnt/local/2tb ext4 defaults 0 0
 
+# Bind mounts
+/mnt /home/erik/mnt none defaults,bind 0 0
+/srv /home/erik/srv none defaults,bind 0 0
+/var/www /home/erik/www none defaults,bind 0 0
+
 #### NFS Shares ####
 # Snekabel
 10.0.4.2:/mnt /mnt/remote/snekabel nfs4 auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0

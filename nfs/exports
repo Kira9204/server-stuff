@@ -11,4 +11,5 @@
 
 /home/erik 10.0.6.10(rw,sync,all_squash,anonuid=1000,anongid=1001,no_subtree_check,crossmnt)
 /home/erik 192.168.56.0/24(rw,sync,all_squash,anonuid=1000,anongid=1001,no_subtree_check,crossmnt)
+/mnt/local 192.168.56.0/24(rw,sync,all_squash,anonuid=1000,anongid=1001,no_subtree_check,crossmnt)
 /home/erik/mnt 10.0.0.0/16(ro,sync,all_squash,anonuid=1000,anongid=1001,no_subtree_check,crossmnt)
